@@ -4,6 +4,8 @@ import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { createBrowserHistory, createMemoryHistory } from 'history';
 import { reducer as formReducer } from 'redux-form';
 
+import { isWindowUndefined, getWindow } from '../utils/index';
+
 const history = isWindowUndefined() ? createMemoryHistory() : createBrowserHistory();
 const historyMiddleware = routerMiddleware(history);
 

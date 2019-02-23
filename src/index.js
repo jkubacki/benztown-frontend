@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import { Route } from 'react-router-dom';
-import store, { history } from './store/index';
+import store, { history } from './store';
 
 
 import './index.css';
