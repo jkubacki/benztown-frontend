@@ -7,6 +7,7 @@ import { reducer as formReducer } from 'redux-form';
 import { isWindowUndefined, getWindow } from '../utils/index';
 
 import client from 'store/client';
+import elements from 'store/elements';
 
 const history = isWindowUndefined() ? createMemoryHistory() : createBrowserHistory();
 const historyMiddleware = routerMiddleware(history);
@@ -15,6 +16,7 @@ export const reducers = combineReducers({
   router: connectRouter(history),
   form: formReducer,
   client,
+  elements,
 });
 
 const composeEnhancers =
