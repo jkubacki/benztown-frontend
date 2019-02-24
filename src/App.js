@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
-import { withRouter } from 'react-router-dom';
 
 import Homepage from 'views/Homepage'
 import './App.css';
-
 import { Route } from 'components/navigation';
 
 class App extends Component {
@@ -27,10 +23,4 @@ class App extends Component {
   }
 }
 
-export default compose(
-  connect(
-    null,
-    {},
-  ),
-  withRouter,
-)(App);
+export default App;
