@@ -1,4 +1,4 @@
-import { LOGIN_REQUEST, LOGIN_SUCCESS } from 'actionTypes';
+import { LOGIN_REQUEST, LOGIN_SUCCESS, MARK_AS_NOT_LOGGED } from 'actionTypes';
 import ClientState from 'constants/clientState';
 
 const initialState = {
@@ -11,6 +11,8 @@ export default function client(state = initialState, { type }) {
       return { state: ClientState.FETCHING }
     case LOGIN_SUCCESS:
       return { state: ClientState.LOGGED_IN }
+    case MARK_AS_NOT_LOGGED:
+      return { state: ClientState.NOT_LOGGED_IN }
     default:
       return state;
   }

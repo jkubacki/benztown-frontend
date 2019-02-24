@@ -4,6 +4,7 @@ import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
+  MARK_AS_NOT_LOGGED
 } from 'actionTypes';
 import {
   sendLoginRequest,
@@ -27,4 +28,12 @@ export function login(params) {
       }
     },
   });
+}
+
+export function markAsLoggedIn() {
+  return { type: LOGIN_SUCCESS };
+}
+
+export function markAsNotLoggedIn() {
+  return { type: MARK_AS_NOT_LOGGED };
 }
