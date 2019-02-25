@@ -13,17 +13,22 @@ class AcceptInvitationPage extends React.Component {
     const { handleSubmit } = this.props;
 
     return (
-      <form onSubmit={handleSubmit(this.handleSubmit)}>
-        <div>
-          <Field
-            label="password"
-            name="password"
-            type="password"
-            component="input"
-          />
-        </div>
-        <button type="submit">Submit</button>
-      </form>
+      <div className="container">
+        <form onSubmit={handleSubmit(this.handleSubmit)}>
+          <label>Password</label>
+          <div className="form-group">
+            <Field
+              label="password"
+              placeholder="Set your password"
+              name="password"
+              type="password"
+              component="input"
+              className="form-control"
+            />
+          </div>
+          <button type="submit" className="btn btn-primary">Accept Invitation</button>
+        </form>
+      </div>
     );
   }
 }
