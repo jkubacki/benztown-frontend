@@ -11,7 +11,7 @@ import ElementList from 'components/ElementList'
 
 function Homepage({ isLoggedIn }) {
   return (
-    <div>
+    <div className="container">
       {isLoggedIn && <ElementList />}
       {!isLoggedIn && <LoginForm />}
     </div>

@@ -19,30 +19,39 @@ class LoginForm extends React.Component {
 
     return(
       <form onSubmit={handleSubmit(this.handleSubmit)}>
-        <div>
+        <div className="form-group">
+          <label>Email address</label>
           <Field
             label="email"
-            placeholder="email"
+            placeholder="Enter email"
             name="email"
             type="email"
             component="input"
+            className="form-control"
           />
+        </div>
+        <div className="form-group">
+          <label>Password</label>
           <Field
             label="password"
+            placeholder="password"
             name="password"
             type="password"
             component="input"
+            className="form-control"
           />
         </div>
-        <div>
+        <div className="form-check">
           <Field
             label="Remember me"
             type="checkbox"
             name="remember"
             component="input"
+            className="form-check-input"
           />
-          <button type="submit">Submit</button>
+          <label className="form-check-label">Remember me</label>
         </div>
+        <button type="submit" className="btn btn-primary">Submit</button>
       </form>
     )
   }
