@@ -29,7 +29,9 @@ export function logout() {
       dispatch(push(getRootPath()));
       dispatch({ type: LOGOUT_SUCCESS });
     },
-    onFailure: LOGOUT_FAILURE,
+    onFailure: dispatch => {
+      dispatch({ type: LOGOUT_FAILURE });
+    },
   });
 }
 
