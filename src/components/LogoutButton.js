@@ -9,7 +9,7 @@ class LogoutButton extends React.Component {
     const { logout } = this.props;
 
     return(
-      <a class="nav-link" onClick={logout()}>Logout</a>
+      <a class="nav-link" onClick={logout}>Logout</a>
     )
   }
 }
