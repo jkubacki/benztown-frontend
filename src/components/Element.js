@@ -11,7 +11,7 @@ class Element extends React.Component {
         </td>
         <td>
           <ReactAudioPlayer
-            src={'http://localhost:3000/' + element.attributes.file}
+            src={element.attributes.file}
             controls
           />
         </td>
