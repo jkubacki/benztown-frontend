@@ -43,8 +43,11 @@ export function acceptInvitation(params) {
       dispatch({ type: ACCEPT_INVITATION_SUCCESS });
       dispatch(push(getRootPath()));
     },
-    onFailure: dispatch => {
+    onFailure: (dispatch, error) => {
       dispatch({ type: ACCEPT_INVITATION_FAILURE });
+      throw new SubmissionError({
+        password: error.response.data,
+      });
     },
   });
 }
@@ -61,8 +64,8 @@ export function login(params) {
 
       if (error.response.data.error === 'invalid_grant') {
         throw new SubmissionError({
-          email: 'errors.invalidLoginOrPassword',
-          password: 'errors.invalidLoginOrPassword',
+          email: 'Invalid email or password',
+          password: 'Invalid email or password',
         });
       }
     },

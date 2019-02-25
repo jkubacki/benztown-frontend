@@ -3,9 +3,9 @@ import { compose } from 'redux'
 import { connect } from 'react-redux'
 import { Field, reduxForm } from 'redux-form';
 import { login } from 'actions/auth';
+import validateField from 'utils/validateField'
 
 class LoginForm extends React.Component {
-
   handleSubmit = values =>
     this.props.login({
       username: values.email,
@@ -25,7 +25,7 @@ class LoginForm extends React.Component {
             placeholder="Enter email"
             name="email"
             type="email"
-            component="input"
+            component={validateField}
             className="form-control"
           />
         </div>
@@ -33,10 +33,10 @@ class LoginForm extends React.Component {
           <label>Password</label>
           <Field
             label="password"
-            placeholder="password"
+            placeholder="Enter password"
             name="password"
             type="password"
-            component="input"
+            component={validateField}
             className="form-control"
           />
         </div>
