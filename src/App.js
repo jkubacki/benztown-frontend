@@ -6,6 +6,7 @@ import Homepage from 'views/Homepage'
 import AcceptInvitationPage from 'views/AcceptInvitationPage'
 import AppHeader from 'components/AppHeader'
 import { Route } from 'components/navigation';
+import { Switch } from 'react-router'
 
 import {
   markAsLoggedIn as markAsLoggedInAction,
@@ -33,16 +34,18 @@ class App extends Component {
     return (
       <div className="container">
         <AppHeader />
-        <Route
-          path={getRootPath()}
-          exact
-          component={Homepage}
-        />
-        <Route
-          path={getAcceptInvitationPath()}
-          exact
-          component={AcceptInvitationPage}
-        />
+        <Switch>
+          <Route
+            path={getRootPath()}
+            exact
+            component={Homepage}
+          />
+          <Route
+            path={getAcceptInvitationPath()}
+            exact
+            component={AcceptInvitationPage}
+          />
+        </Switch>
       </div>
     );
   }
