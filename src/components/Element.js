@@ -1,12 +1,24 @@
 import React from 'react';
+import ReactAudioPlayer from 'react-audio-player';
 
 class Element extends React.Component {
   render() {
     const { element } = this.props;
     return (
-      <>
-        {element.id}
-      </>
+      <tr>
+        <td>
+          {element.attributes.name}
+        </td>
+        <td>
+          <ReactAudioPlayer
+            src={'http://localhost:3000/' + element.attributes.file}
+            controls
+          />
+        </td>
+        <td>
+          { element.attributes.tag_list.join(', ') }
+        </td>
+      </tr>
     )
   }
 }
