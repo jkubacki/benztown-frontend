@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { getOauthTokenPath } from 'constants/apiPaths';
+import { getOauthTokenPath, getInvitationsPath } from 'constants/apiPaths';
 import { LocalStorage, SessionStorage } from 'utils/storage';
 import { getStorageItem } from 'utils';
 
@@ -45,4 +45,8 @@ export function refreshTokens() {
 
       return response;
     });
+}
+
+export function sendAcceptInvitationRequest(params) {
+  return axios.post(getInvitationsPath(), params)
 }

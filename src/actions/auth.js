@@ -4,11 +4,28 @@ import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
-  MARK_AS_NOT_LOGGED
+  MARK_AS_NOT_LOGGED,
+  ACCEPT_INVITATION_REQUEST,
+  ACCEPT_INVITATION_SUCCESS,
+  ACCEPT_INVITATION_FAILURE
 } from 'actionTypes';
 import {
   sendLoginRequest,
+  sendAcceptInvitationRequest,
 } from 'api/auth';
+
+export function acceptInvitation(params) {
+  return dispatchRequest({
+    requestAction: ACCEPT_INVITATION_REQUEST,
+    request: () => sendAcceptInvitationRequest(params),
+    onSuccess: (dispatch, data, getState) => {
+      dispatch({ type: ACCEPT_INVITATION_SUCCESS });
+    },
+    onFailure: (dispatch, error) => {
+      dispatch({ type: ACCEPT_INVITATION_FAILURE });
+    },
+  });
+}
 
 export function login(params) {
   return dispatchRequest({
