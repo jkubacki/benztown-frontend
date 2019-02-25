@@ -1,4 +1,6 @@
 import { SubmissionError } from 'redux-form';
+import { push } from 'connected-react-router';
+
 import { dispatchRequest } from 'actions';
 import {
   LOGIN_REQUEST,
@@ -13,15 +15,17 @@ import {
   sendLoginRequest,
   sendAcceptInvitationRequest,
 } from 'api/auth';
+import { getRootPath } from 'constants/paths';
 
 export function acceptInvitation(params) {
   return dispatchRequest({
     requestAction: ACCEPT_INVITATION_REQUEST,
     request: () => sendAcceptInvitationRequest(params),
-    onSuccess: (dispatch, data, getState) => {
+    onSuccess: dispatch => {
       dispatch({ type: ACCEPT_INVITATION_SUCCESS });
+      dispatch(push(getRootPath()));
     },
-    onFailure: (dispatch, error) => {
+    onFailure: dispatch => {
       dispatch({ type: ACCEPT_INVITATION_FAILURE });
     },
   });

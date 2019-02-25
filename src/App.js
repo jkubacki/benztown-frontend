@@ -4,6 +4,7 @@ import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
 
 import Homepage from 'views/Homepage'
+import AcceptInvitationPage from 'views/AcceptInvitationPage'
 import './App.css';
 import { Route } from 'components/navigation';
 
@@ -12,6 +13,7 @@ import {
   markAsNotLoggedIn as markAsNotLoggedInAction
 } from 'actions/auth';
 import { getStorageItem} from 'utils';
+import { getRootPath, getAcceptInvitationPath } from './constants/paths';
 
 class App extends Component {
   componentWillMount() {
@@ -32,14 +34,14 @@ class App extends Component {
     return (
       <div>
         <Route
-          path="/"
+          path={getRootPath()}
           exact
           component={Homepage}
         />
         <Route
-          path="/home"
+          path={getAcceptInvitationPath()}
           exact
-          component={Homepage}
+          component={AcceptInvitationPage}
         />
       </div>
     );
