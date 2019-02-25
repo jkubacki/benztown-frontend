@@ -7,7 +7,7 @@ import Element from 'components/Element';
 
 class ElementList extends React.Component {
   componentWillMount() {
-    this.props.getElements();
+    this.props.getElements({});
   }
 
   render() {
