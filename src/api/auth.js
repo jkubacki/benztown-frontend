@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { post } from 'api';
 
-import { getOauthTokenPath, getInvitationsPath } from 'constants/apiPaths';
+import { getOauthTokenPath, getInvitationsPath, getOauthRevokePath } from 'constants/apiPaths';
 import { LocalStorage, SessionStorage } from 'utils/storage';
 import { getStorageItem } from 'utils';
 
@@ -30,6 +30,32 @@ export function sendLoginRequest(params) {
   return sendTokenRequest({
     grant_type: 'password',
     ...params,
+  });
+}
+
+export function sendLogoutRequest() {
+  const token = getStorageItem('token');
+
+  return new Promise((resolve, reject) => {
+    axios
+      .post(
+        getOauthRevokePath(),
+        { token },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      )
+      .then(() => {
+        LocalStorage.removeItem('rememberMe');
+        LocalStorage.removeItem('token');
+        LocalStorage.removeItem('refresh_token');
+        SessionStorage.removeItem('token');
+        SessionStorage.removeItem('refresh_token');
+        resolve();
+      })
+      .catch(reject);
   });
 }
 
