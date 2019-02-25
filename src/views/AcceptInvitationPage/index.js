@@ -24,6 +24,7 @@ class AcceptInvitationPage extends React.Component {
             type="password"
             component={validateField}
             className="form-control"
+            required="required"
           />
         </div>
         <button type="submit" className="btn btn-primary">Accept Invitation</button>
