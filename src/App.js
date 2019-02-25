@@ -5,7 +5,10 @@ import { withRouter } from 'react-router-dom';
 
 import Homepage from 'views/Homepage'
 import AcceptInvitationPage from 'views/AcceptInvitationPage'
+import AppHeader from 'components/AppHeader'
 import { Route } from 'components/navigation';
+
+import './App.css';
 
 import {
   markAsLoggedIn as markAsLoggedInAction,
@@ -31,7 +34,8 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
+        <AppHeader />
         <Route
           path={getRootPath()}
           exact
