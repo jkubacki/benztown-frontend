@@ -6,6 +6,9 @@ import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
+  LOGOUT_REQUEST,
+  LOGOUT_SUCCESS,
+  LOGOUT_FAILURE,
   MARK_AS_NOT_LOGGED,
   ACCEPT_INVITATION_REQUEST,
   ACCEPT_INVITATION_SUCCESS,
@@ -14,8 +17,21 @@ import {
 import {
   sendLoginRequest,
   sendAcceptInvitationRequest,
+  sendLogoutRequest,
 } from 'api/auth';
 import { getRootPath } from 'constants/paths';
+
+export function logout() {
+  return dispatchRequest({
+    requestAction: LOGOUT_REQUEST,
+    request: sendLogoutRequest,
+    onSuccess: dispatch => {
+      dispatch(push(getRootPath()));
+      dispatch({ type: LOGOUT_SUCCESS });
+    },
+    onFailure: LOGOUT_FAILURE,
+  });
+}
 
 export function acceptInvitation(params) {
   return dispatchRequest({

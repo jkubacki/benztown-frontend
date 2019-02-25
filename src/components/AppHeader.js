@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 
+import LogoutButton from 'components/LogoutButton'
+
 import ClientState from 'constants/clientState'
 
 function AppHeader({ isLoggedIn }) {
@@ -12,7 +14,7 @@ function AppHeader({ isLoggedIn }) {
         isLoggedIn &&
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">Logout</a>
+            <LogoutButton />
           </li>
         </ul>
       }
