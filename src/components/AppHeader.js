@@ -11,9 +11,9 @@ import './AppHeader.css';
 
 function AppHeader({ isLoggedIn }) {
   return (
-    <div class="navbar">
-      <ul class="navbar-nav nav-fill d-flex w-100 flex-md-row">
-        <li class="nav-item">
+    <div className="navbar">
+      <ul className="navbar-nav nav-fill d-flex w-100 flex-md-row">
+        <li className="nav-item">
           <span className="navbar-brand">Benztown</span>
         </li>
         {
