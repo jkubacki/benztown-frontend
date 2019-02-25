@@ -41,7 +41,7 @@ class LoginForm extends React.Component {
             className="form-control"
           />
         </div>
-        <div className="form-check">
+        <div className="form-group form-check">
           <Field
             label="Remember me"
             type="checkbox"
@@ -51,7 +51,7 @@ class LoginForm extends React.Component {
           />
           <label className="form-check-label">Remember me</label>
         </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
+        <button type="submit" className="btn btn-outline-primary">Submit</button>
       </form>
     )
   }
