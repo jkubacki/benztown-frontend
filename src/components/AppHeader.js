@@ -7,27 +7,29 @@ import SearchForm from 'components/SearchForm'
 
 import ClientState from 'constants/clientState'
 
+import './AppHeader.css';
+
 function AppHeader({ isLoggedIn }) {
   return (
-    <nav className="navbar navbar-light">
-      <span className="navbar-brand">Benztown</span>
-      {
-        isLoggedIn &&
-        <ul className="navbar-nav">
+    <div class="navbar">
+      <ul class="navbar-nav nav-fill d-flex w-100 flex-md-row">
+        <li class="nav-item">
+          <span className="navbar-brand">Benztown</span>
+        </li>
+        {
+          isLoggedIn &&
           <li className="nav-item">
-           <SearchForm />
+            <SearchForm />
           </li>
-        </ul>
-      }
-      {
-        isLoggedIn &&
-        <ul className="navbar-nav">
+        }
+        {
+          isLoggedIn &&
           <li className="nav-item">
             <LogoutButton />
           </li>
-        </ul>
-      }
-    </nav>
+        }
+      </ul>
+    </div>
   )
 }
 

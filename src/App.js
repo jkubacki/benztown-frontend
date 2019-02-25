@@ -8,8 +8,6 @@ import AcceptInvitationPage from 'views/AcceptInvitationPage'
 import AppHeader from 'components/AppHeader'
 import { Route } from 'components/navigation';
 
-import './App.css';
-
 import {
   markAsLoggedIn as markAsLoggedInAction,
   markAsNotLoggedIn as markAsNotLoggedInAction
