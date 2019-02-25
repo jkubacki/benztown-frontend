@@ -5,6 +5,7 @@ import { Field, reduxForm } from 'redux-form';
 import { parse } from 'query-string';
 
 import { acceptInvitation } from 'actions/auth';
+import validateField from 'utils/validateField'
 
 class AcceptInvitationPage extends React.Component {
   handleSubmit = this.props.acceptInvitation;
@@ -21,7 +22,7 @@ class AcceptInvitationPage extends React.Component {
             placeholder="Set your password"
             name="password"
             type="password"
-            component="input"
+            component={validateField}
             className="form-control"
           />
         </div>
