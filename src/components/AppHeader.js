@@ -8,12 +8,12 @@ import ClientState from 'constants/clientState'
 
 function AppHeader({ isLoggedIn }) {
   return (
-    <nav class="navbar navbar-light">
-      <span class="navbar-brand">Benztown</span>
+    <nav className="navbar navbar-light">
+      <span className="navbar-brand">Benztown</span>
       {
         isLoggedIn &&
-        <ul class="navbar-nav">
-          <li class="nav-item">
+        <ul className="navbar-nav">
+          <li className="nav-item">
             <LogoutButton />
           </li>
         </ul>
