@@ -13,11 +13,20 @@ class ElementList extends React.Component {
   render() {
     const { elements } = this.props;
     return(
-      <div className="elements">
-        {elements.map((element) => (
-          <Element key={element.id} element={element} />
-        ))}
-      </div>
+      <table className="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">File</th>
+            <th scope="col">Tags</th>
+          </tr>
+        </thead>
+        <tbody>
+          {elements.map((element) => (
+            <Element key={element.id} element={element} />
+          ))}
+        </tbody>
+      </table>
     )
   }
 }

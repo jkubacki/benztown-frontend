@@ -14,15 +14,18 @@ class AcceptInvitationPage extends React.Component {
 
     return (
       <form onSubmit={handleSubmit(this.handleSubmit)}>
-        <div>
+        <label>Password</label>
+        <div className="form-group">
           <Field
             label="password"
+            placeholder="Set your password"
             name="password"
             type="password"
             component="input"
+            className="form-control"
           />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className="btn btn-primary">Accept Invitation</button>
       </form>
     );
   }

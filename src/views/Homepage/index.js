@@ -1,3 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.css';
+
 import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
@@ -9,10 +11,10 @@ import ElementList from 'components/ElementList'
 
 function Homepage({ isLoggedIn }) {
   return (
-    <div>
+    <>
       {isLoggedIn && <ElementList />}
       {!isLoggedIn && <LoginForm />}
-    </div>
+    </>
   )
 }
 
