@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "axios-cancel": "^0.2.2",
+    "bootstrap": "^4.3.1",
     "connected-react-router": "^6.3.1",
     "cookie-storage": "^3.2.0",
     "lodash.noop": "^3.0.1",

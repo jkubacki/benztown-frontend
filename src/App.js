@@ -5,7 +5,6 @@ import { withRouter } from 'react-router-dom';
 
 import Homepage from 'views/Homepage'
 import AcceptInvitationPage from 'views/AcceptInvitationPage'
-import './App.css';
 import { Route } from 'components/navigation';
 
 import {
