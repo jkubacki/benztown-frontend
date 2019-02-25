@@ -1,7 +1,6 @@
 import React from 'react';
 import { compose } from 'redux'
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router'
 import { Field, reduxForm } from 'redux-form';
 import { login } from 'actions/auth';
 
@@ -62,7 +61,6 @@ export default compose(
     null,
     { login },
   ),
-  withRouter,
   reduxForm({
     form: 'login',
     initialValues: {

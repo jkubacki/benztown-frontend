@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { withRouter } from 'react-router-dom';
 
 import Homepage from 'views/Homepage'
 import AcceptInvitationPage from 'views/AcceptInvitationPage'
@@ -57,5 +56,4 @@ export default compose(
       markAsNotLoggedIn: markAsNotLoggedInAction
     },
   ),
-  withRouter,
 )(App);
