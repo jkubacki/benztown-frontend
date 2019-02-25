@@ -7,10 +7,10 @@ import {
   REQUEST_ELEMENTS_SUCCESS,
 } from 'actionTypes';
 
-export function getElements() {
+export function getElements(params) {
   return dispatchRequest({
     requestAction: REQUEST_ELEMENTS_REQUEST,
-    request: () => requestElements(),
+    request: () => requestElements(params),
     onSuccess: (dispatch, payload) => {
       dispatch({ type: REQUEST_ELEMENTS_SUCCESS, payload: payload.data.data });
     },
