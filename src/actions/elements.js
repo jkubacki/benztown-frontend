@@ -14,6 +14,8 @@ export function getElements(params) {
     onSuccess: (dispatch, payload) => {
       dispatch({ type: REQUEST_ELEMENTS_SUCCESS, payload: payload.data.data });
     },
-    onFailure: REQUEST_ELEMENTS_FAILURE,
+    onFailure: dispatch => {
+      dispatch({ type: REQUEST_ELEMENTS_FAILURE });
+    },
   });
 }
