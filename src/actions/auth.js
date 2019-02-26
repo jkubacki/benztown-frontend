@@ -45,9 +45,11 @@ export function acceptInvitation(params) {
     },
     onFailure: (dispatch, error) => {
       dispatch({ type: ACCEPT_INVITATION_FAILURE });
-      throw new SubmissionError({
-        password: error.response.data,
-      });
+      if (error.response.data != null) {
+        throw new SubmissionError({
+          password: error.response.data,
+        });
+      }
     },
   });
 }

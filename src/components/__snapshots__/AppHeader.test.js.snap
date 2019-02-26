@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing when logged in 1`] = `
+<div
+  className="navbar"
+>
+  <ul
+    className="navbar-nav nav-fill d-flex w-100 flex-md-row"
+  >
+    <li
+      className="nav-item"
+    >
+      <span
+        className="navbar-brand"
+      >
+        Benztowny
+      </span>
+    </li>
+    <li
+      className="nav-item"
+    >
+      <Connect(SearchForm) />
+    </li>
+    <li
+      className="nav-item"
+    >
+      <Connect(LogoutButton) />
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`renders without crashing when not logged in 1`] = `
+<div
+  className="navbar"
+>
+  <ul
+    className="navbar-nav nav-fill d-flex w-100 flex-md-row"
+  >
+    <li
+      className="nav-item"
+    >
+      <span
+        className="navbar-brand"
+      >
+        Benztowny
+      </span>
+    </li>
+  </ul>
+</div>
+`;

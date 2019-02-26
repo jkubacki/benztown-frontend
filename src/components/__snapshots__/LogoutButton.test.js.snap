@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LogoutButton should render corectly 1`] = `
+<button
+  className="btn btn btn-outline-dark btn-block-sm"
+  onClick={[MockFunction]}
+>
+  Logout
+</button>
+`;

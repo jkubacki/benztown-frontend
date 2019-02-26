@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchForm should render corectly 1`] = `
+<input
+  className="form-control"
+  onChange={[Function]}
+  placeholder="Search"
+  type="text"
+/>
+`;

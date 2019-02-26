@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<tr>
+  <td>
+    Element name
+  </td>
+  <td>
+    <t
+      autoPlay={false}
+      className=""
+      controls={true}
+      controlsList=""
+      crossOrigin={null}
+      id=""
+      listenInterval={10000}
+      loop={false}
+      muted={false}
+      onAbort={[Function]}
+      onCanPlay={[Function]}
+      onCanPlayThrough={[Function]}
+      onEnded={[Function]}
+      onError={[Function]}
+      onListen={[Function]}
+      onLoadedMetadata={[Function]}
+      onPause={[Function]}
+      onPlay={[Function]}
+      onSeeked={[Function]}
+      onVolumeChanged={[Function]}
+      preload="metadata"
+      src={null}
+      style={Object {}}
+      title=""
+      volume={1}
+    />
+  </td>
+  <td>
+    tag1, tag2, tag3
+  </td>
+</tr>
+`;

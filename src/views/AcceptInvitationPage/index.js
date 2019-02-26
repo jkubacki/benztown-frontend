@@ -41,6 +41,8 @@ const mapStateToProps = (state, { location }) => {
   };
 };
 
+export { AcceptInvitationPage }
+
 export default compose(
   connect(
     mapStateToProps,

@@ -23,4 +23,6 @@ class Element extends React.Component {
   }
 }
 
+export { Element };
+
 export default Element;

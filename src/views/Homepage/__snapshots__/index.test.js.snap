@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing when logged in 1`] = `
+<Fragment>
+  <Connect(ElementList) />
+</Fragment>
+`;
+
+exports[`renders without crashing when not logged in 1`] = `
+<Fragment>
+  <Connect(ReduxForm) />
+</Fragment>
+`;

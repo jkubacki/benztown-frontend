@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginForm should render corectly 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <div
+    className="form-group"
+  >
+    <label>
+      Email address
+    </label>
+    <Field
+      className="form-control"
+      component={[Function]}
+      label="email"
+      name="email"
+      placeholder="Enter email"
+      required={true}
+      type="email"
+    />
+  </div>
+  <div
+    className="form-group"
+  >
+    <label>
+      Password
+    </label>
+    <Field
+      className="form-control"
+      component={[Function]}
+      label="password"
+      name="password"
+      placeholder="Enter password"
+      required={true}
+      type="password"
+    />
+  </div>
+  <div
+    className="form-group form-check"
+  >
+    <Field
+      className="form-check-input"
+      component="input"
+      label="Remember me"
+      name="remember"
+      type="checkbox"
+    />
+    <label
+      className="form-check-label"
+    >
+      Remember me
+    </label>
+  </div>
+  <button
+    className="btn btn-outline-primary"
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;

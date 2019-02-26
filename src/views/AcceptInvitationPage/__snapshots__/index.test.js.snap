@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AcceptInvitationPage should render corectly 1`] = `
+<form
+  onSubmit={[MockFunction]}
+>
+  <label>
+    Password
+  </label>
+  <div
+    className="form-group"
+  >
+    <Field
+      className="form-control"
+      component={[Function]}
+      label="password"
+      name="password"
+      placeholder="Set your password"
+      required="required"
+      type="password"
+    />
+  </div>
+  <button
+    className="btn btn-primary"
+    type="submit"
+  >
+    Accept Invitation
+  </button>
+</form>
+`;

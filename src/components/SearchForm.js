@@ -16,6 +16,8 @@ class SearchForm extends React.Component {
   }
 }
 
+export { SearchForm }
+
 export default compose(
   connect(
     null,
