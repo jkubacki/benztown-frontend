@@ -17,6 +17,8 @@ function Homepage({ isLoggedIn }) {
   )
 }
 
+export { Homepage }
+
 export default compose(
   connect(({ client }) => ({
     isLoggedIn: client.state === ClientState.LOGGED_IN,
