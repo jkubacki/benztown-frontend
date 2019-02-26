@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<table
+  className="table"
+>
+  <thead>
+    <tr>
+      <th
+        scope="col"
+      >
+        Name
+      </th>
+      <th
+        scope="col"
+      >
+        File
+      </th>
+      <th
+        scope="col"
+      >
+        Tags
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <Element
+      element={
+        Object {
+          "attributes": Object {
+            "name": "Element name1",
+            "tag_list": Array [
+              "tag1",
+              "tag2",
+              "tag3",
+            ],
+          },
+          "id": 1,
+        }
+      }
+      key="1"
+    />
+    <Element
+      element={
+        Object {
+          "attributes": Object {
+            "name": "Element name2",
+            "tag_list": Array [
+              "tag2",
+              "tag3",
+              "tag4",
+            ],
+          },
+          "id": 2,
+        }
+      }
+      key="2"
+    />
+  </tbody>
+</table>
+`;

@@ -36,6 +36,8 @@ function mapStateToProps(props) {
   return { elements };
 }
 
+export { ElementList }
+
 export default connect(
   mapStateToProps,
   { getElements },
