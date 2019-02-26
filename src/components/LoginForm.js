@@ -27,7 +27,7 @@ class LoginForm extends React.Component {
             type="email"
             component={validateField}
             className="form-control"
-            required="true"
+            required={true}
           />
         </div>
         <div className="form-group">
@@ -39,7 +39,7 @@ class LoginForm extends React.Component {
             type="password"
             component={validateField}
             className="form-control"
-            required="true"
+            required={true}
           />
         </div>
         <div className="form-group form-check">
