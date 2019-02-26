@@ -58,6 +58,8 @@ class LoginForm extends React.Component {
   }
 }
 
+export { LoginForm }
+
 export default compose(
   connect(
     null,
