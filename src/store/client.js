@@ -1,7 +1,7 @@
 import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT_SUCCESS, MARK_AS_NOT_LOGGED } from 'actionTypes';
 import ClientState from 'constants/clientState';
 
-const initialState = {
+export const initialState = {
   state: ClientState.NOT_LOGGED_IN
 };
 
