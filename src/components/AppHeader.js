@@ -14,7 +14,7 @@ function AppHeader({ isLoggedIn }) {
     <div className="navbar">
       <ul className="navbar-nav nav-fill d-flex w-100 flex-md-row">
         <li className="nav-item">
-          <span className="navbar-brand">Benztowny</span>
+          <span className="navbar-brand">Benztown</span>
         </li>
         {
           isLoggedIn &&

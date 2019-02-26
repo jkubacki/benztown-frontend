@@ -13,7 +13,7 @@ exports[`renders without crashing when logged in 1`] = `
       <span
         className="navbar-brand"
       >
-        Benztowny
+        Benztown
       </span>
     </li>
     <li
@@ -43,7 +43,7 @@ exports[`renders without crashing when not logged in 1`] = `
       <span
         className="navbar-brand"
       >
-        Benztowny
+        Benztown
       </span>
     </li>
   </ul>
