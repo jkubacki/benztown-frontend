@@ -27,5 +27,8 @@ module.exports = {
         "moduleDirectory": ["node_modules", "src/"]
       }
     }
+  },
+  env: {
+    jest: true
   }
 };
