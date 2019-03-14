@@ -18,7 +18,7 @@ LogoutButton.propTypes = {
   logout: PropTypes.func.isRequired,
 };
 
-export { LogoutButton };
+export { LogoutButton as LogoutButtonUnwrapped };
 
 export default compose(
   connect(
