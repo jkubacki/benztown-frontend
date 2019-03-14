@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { elementPropType } from 'constants/propTypes';
 import ReactAudioPlayer from 'react-audio-player';
 
 function Element({ element }) {
@@ -22,13 +22,7 @@ function Element({ element }) {
 }
 
 Element.propTypes = {
-  element: PropTypes.shape({
-    attributes: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      file: PropTypes.string.isRequired,
-      tag_list: PropTypes.array.isRequired,
-    }).isRequired,
-  }).isRequired,
+  element: elementPropType.isRequired,
 };
 
 export default Element;

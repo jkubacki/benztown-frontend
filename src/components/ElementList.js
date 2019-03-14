@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { elementPropType } from 'constants/propTypes';
 import getElementsAction from 'actions/elements';
 import { connect } from 'react-redux';
 
@@ -31,15 +32,7 @@ class ElementList extends React.Component {
 }
 
 ElementList.propTypes = {
-  elements: PropTypes.arrayOf(
-    PropTypes.shape({
-      attributes: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        file: PropTypes.string.isRequired,
-        tag_list: PropTypes.array.isRequired,
-      }).isRequired,
-    }).isRequired,
-  ).isRequired,
+  elements: PropTypes.arrayOf(elementPropType).isRequired,
   getElements: PropTypes.func.isRequired,
 };
 
