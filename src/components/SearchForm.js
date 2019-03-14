@@ -22,7 +22,7 @@ SearchForm.propTypes = {
   getElements: PropTypes.func.isRequired,
 };
 
-export { SearchForm as SearchFormUnwrapped }
+export { SearchForm as SearchFormUnwrapped };
 
 export default compose(
   connect(

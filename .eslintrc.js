@@ -20,12 +20,21 @@ module.exports = {
     'react',
   ],
   rules: {
-    'react/jsx-filename-extension': 0
+    'react/jsx-filename-extension': 0,
+    'jsx-a11y/label-has-associated-control': 0,
+    'jsx-a11y/label-has-for': [
+      'error', {
+        'components': ['label'],
+        'required': {
+          'every': ['id']
+        }
+      }
+    ],
   },
   settings: {
-    "import/resolver": {
+    'import/resolver': {
       node: {
-        "moduleDirectory": ["node_modules", "src/"]
+        'moduleDirectory': ['node_modules', 'src/']
       }
     }
   },
