@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Route as StandardRoute, withRouter } from 'react-router-dom';
 
 import { routerLocationPropType } from 'constants/propTypes';
-import { getRouteLocation } from 'utils/navigation';
+import getRouteLocation from 'utils/navigation';
 
 function Route({
   storedLocation,
