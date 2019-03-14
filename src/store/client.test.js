@@ -1,4 +1,6 @@
-import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT_SUCCESS, MARK_AS_NOT_LOGGED } from 'actionTypes';
+import {
+  LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT_SUCCESS, MARK_AS_NOT_LOGGED,
+} from 'actionTypes';
 import ClientState from 'constants/clientState';
 import reducer, { initialState } from './client';
 
