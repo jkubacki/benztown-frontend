@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { logout as logoutAction } from 'actions/auth';
@@ -12,6 +13,10 @@ function LogoutButton({ logout }) {
     </button>
   );
 }
+
+LogoutButton.propTypes = {
+  logout: PropTypes.func.isRequired,
+};
 
 export { LogoutButton };
 
