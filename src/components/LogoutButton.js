@@ -7,7 +7,7 @@ import './LogoutButton.css';
 
 function LogoutButton({ logout }) {
   return (
-    <button type="button" onClick={logoutAction} className="btn btn btn-outline-dark btn-block-sm">
+    <button type="button" onClick={logout} className="btn btn btn-outline-dark btn-block-sm">
       Logout
     </button>
   );

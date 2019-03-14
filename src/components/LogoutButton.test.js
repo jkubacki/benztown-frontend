@@ -4,9 +4,7 @@ import { shallow } from 'enzyme';
 
 import { LogoutButton } from './LogoutButton';
 
-const props = {
-  logout: jest.fn(() => Promise.resolve()),
-};
+const props = { logout: jest.fn(() => Promise.resolve()) };
 
 describe('LogoutButton', () => {
   let wrapper;
@@ -24,7 +22,7 @@ describe('LogoutButton', () => {
 
   it('should call logout when button is clicked', () => {
     const logoutButton = wrapper.find('button');
-    logoutButton.simulate('click')
+    logoutButton.simulate('click');
 
     expect(props.logout).toHaveBeenCalled();
   });
