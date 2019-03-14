@@ -42,7 +42,7 @@ AppHeader.propTypes = {
   isLoggedIn: PropTypes.bool.isRequired,
 };
 
-export { AppHeader };
+export { AppHeader as AppHeaderUnwrapped };
 
 export default compose(
   connect(({ client }) => ({
