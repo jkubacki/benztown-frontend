@@ -2,9 +2,11 @@
 
 exports[`AcceptInvitationPage should render corectly 1`] = `
 <form
-  onSubmit={[MockFunction]}
+  onSubmit={[Function]}
 >
-  <label>
+  <label
+    htmlFor="password"
+  >
     Password
   </label>
   <div
@@ -16,7 +18,7 @@ exports[`AcceptInvitationPage should render corectly 1`] = `
       label="password"
       name="password"
       placeholder="Set your password"
-      required="required"
+      required={true}
       type="password"
     />
   </div>
