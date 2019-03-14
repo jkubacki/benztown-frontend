@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import { Homepage } from './index';
+import { HomepageUnwrapped as Homepage } from './index';
 
 const props = { isLoggedIn: false };
 

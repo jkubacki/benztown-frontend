@@ -41,7 +41,7 @@ function mapStateToProps(props) {
   return { elements };
 }
 
-export { ElementList }
+export { ElementList as ElementListUnwrapped };
 
 export default connect(
   mapStateToProps,
