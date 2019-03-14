@@ -1,5 +1,5 @@
 import dispatchRequest from 'actions';
-import { requestElements } from 'api/elements';
+import requestElements from 'api/elements';
 
 import {
   REQUEST_ELEMENTS_FAILURE,

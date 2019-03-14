@@ -16,14 +16,14 @@ function persistTokens(data) {
 export function sendTokenRequest({ rememberMe = false, ...params }) {
   return axios
     .post(getOauthTokenPath(), params)
-    .then(response => {
+    .then((response) => {
       if (rememberMe) {
         LocalStorage.setItem('rememberMe', rememberMe);
       }
       persistTokens(response.data);
 
       return response;
-    })
+    });
 }
 
 export function sendLoginRequest(params) {
@@ -67,7 +67,7 @@ export function refreshTokens() {
       grant_type: 'refresh_token',
       refresh_token: refreshToken,
     })
-    .then(response => {
+    .then((response) => {
       persistTokens(response.data);
 
       return response;
@@ -75,5 +75,5 @@ export function refreshTokens() {
 }
 
 export function sendAcceptInvitationRequest(params) {
-  return post(getInvitationsPath(), params)
+  return post(getInvitationsPath(), params);
 }
