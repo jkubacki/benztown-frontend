@@ -1,4 +1,4 @@
-import { dispatchRequest } from 'actions';
+import dispatchRequest from 'actions';
 import { requestElements } from 'api/elements';
 
 import {
@@ -7,14 +7,14 @@ import {
   REQUEST_ELEMENTS_SUCCESS,
 } from 'actionTypes';
 
-export function getElements(params) {
+export default function getElements(params) {
   return dispatchRequest({
     requestAction: REQUEST_ELEMENTS_REQUEST,
     request: () => requestElements(params),
     onSuccess: (dispatch, payload) => {
       dispatch({ type: REQUEST_ELEMENTS_SUCCESS, payload: payload.data.data });
     },
-    onFailure: dispatch => {
+    onFailure: (dispatch) => {
       dispatch({ type: REQUEST_ELEMENTS_FAILURE });
     },
   });

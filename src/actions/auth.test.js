@@ -39,12 +39,12 @@ describe('login', () => {
       token_type: 'Bearer',
       expires_in: 7200,
       refresh_token: 'refresh_token',
-      created_at: 1551160769
-    }
+      created_at: 1551160769,
+    };
     const payload = {
-      data: data,
+      data,
       status: 200,
-      statusText: "OK"
+      statusText: 'OK',
     };
     sendLoginRequest.mockReturnValueOnce(Promise.resolve(payload));
 
@@ -54,7 +54,7 @@ describe('login', () => {
       });
       expect(dispatch).toHaveBeenCalledWith({
         type: LOGIN_SUCCESS,
-        payload: payload
+        payload,
       });
     });
   });
@@ -67,7 +67,7 @@ describe('login', () => {
         type: LOGIN_REQUEST,
       });
       expect(dispatch).toHaveBeenCalledWith({
-        type: LOGIN_FAILURE
+        type: LOGIN_FAILURE,
       });
     });
   });
@@ -85,7 +85,7 @@ describe('acceptInvitation: success', () => {
         type: ACCEPT_INVITATION_REQUEST,
       });
       expect(dispatch).toHaveBeenCalledWith({
-        type: ACCEPT_INVITATION_SUCCESS
+        type: ACCEPT_INVITATION_SUCCESS,
       });
       expect(push).toBeCalledWith(getRootPath());
     });
@@ -99,7 +99,7 @@ describe('acceptInvitation: success', () => {
         type: ACCEPT_INVITATION_REQUEST,
       });
       expect(dispatch).toHaveBeenCalledWith({
-        type: ACCEPT_INVITATION_FAILURE
+        type: ACCEPT_INVITATION_FAILURE,
       });
     });
   });
@@ -117,7 +117,7 @@ describe('logout', () => {
         type: LOGOUT_REQUEST,
       });
       expect(dispatch).toHaveBeenCalledWith({
-        type: LOGOUT_SUCCESS
+        type: LOGOUT_SUCCESS,
       });
       expect(push).toBeCalledWith(getRootPath());
     });
@@ -131,7 +131,7 @@ describe('logout', () => {
         type: LOGOUT_REQUEST,
       });
       expect(dispatch).toHaveBeenCalledWith({
-        type: LOGOUT_FAILURE
+        type: LOGOUT_FAILURE,
       });
     });
   });

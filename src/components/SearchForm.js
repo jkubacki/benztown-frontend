@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import { getElements as getElementsAction } from 'actions/elements';
+import getElementsAction from 'actions/elements';
 
 class SearchForm extends React.Component {
   handleChange = (event) => {

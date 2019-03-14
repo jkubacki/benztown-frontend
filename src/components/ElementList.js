@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { getElements as getElementsAction } from 'actions/elements';
+import getElementsAction from 'actions/elements';
 import { connect } from 'react-redux';
 
 import Element from 'components/Element';
