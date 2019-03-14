@@ -1,18 +1,19 @@
 import React from 'react';
-
-import { getElements } from 'actions/elements';
+import PropTypes from 'prop-types';
+import { getElements as getElementsAction } from 'actions/elements';
 import { connect } from 'react-redux';
 
 import Element from 'components/Element';
 
 class ElementList extends React.Component {
   componentWillMount() {
-    this.props.getElements({});
+    const { getElements } = this.props;
+    getElements({});
   }
 
   render() {
     const { elements } = this.props;
-    return(
+    return (
       <table className="table">
         <thead>
           <tr>
@@ -22,14 +23,25 @@ class ElementList extends React.Component {
           </tr>
         </thead>
         <tbody>
-          {elements.map((element) => (
-            <Element key={element.id} element={element} />
-          ))}
+          {elements.map(element => <Element key={element.id} element={element} />)}
         </tbody>
       </table>
-    )
+    );
   }
 }
+
+ElementList.propTypes = {
+  elements: PropTypes.arrayOf(
+    PropTypes.shape({
+      attributes: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        file: PropTypes.string.isRequired,
+        tag_list: PropTypes.array.isRequired,
+      }).isRequired,
+    }).isRequired,
+  ).isRequired,
+  getElements: PropTypes.func.isRequired,
+};
 
 function mapStateToProps(props) {
   const { elements } = props;
@@ -40,5 +52,5 @@ export { ElementList }
 
 export default connect(
   mapStateToProps,
-  { getElements },
+  { getElements: getElementsAction },
 )(ElementList);
