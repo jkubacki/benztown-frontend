@@ -2,7 +2,7 @@ import React from 'react';
 import toJson from 'enzyme-to-json';
 import { shallow } from 'enzyme';
 
-import { LogoutButtonUnwrapped as LogoutButton } from './LogoutButton';
+import { LogoutButtonUnwrapped as LogoutButton } from 'components/LogoutButton';
 
 const props = { logout: jest.fn(() => Promise.resolve()) };
 
