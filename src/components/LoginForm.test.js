@@ -2,7 +2,7 @@ import React from 'react';
 import toJson from 'enzyme-to-json';
 import { shallow } from 'enzyme';
 
-import { LoginForm } from './LoginForm';
+import { LoginForm } from 'components/LoginForm';
 
 const props = {
   login: jest.fn(() => Promise.resolve()),
