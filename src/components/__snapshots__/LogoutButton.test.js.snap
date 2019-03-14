@@ -4,6 +4,7 @@ exports[`LogoutButton should render corectly 1`] = `
 <button
   className="btn btn btn-outline-dark btn-block-sm"
   onClick={[MockFunction]}
+  type="button"
 >
   Logout
 </button>

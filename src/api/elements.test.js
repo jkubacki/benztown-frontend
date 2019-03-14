@@ -1,16 +1,14 @@
 import { get } from 'api';
 import { getElementsPath } from 'constants/apiPaths';
 
-import { requestElements } from './elements';
+import requestElements from 'api/elements';
 
 jest.mock('api', () => ({
   get: jest.fn(() => Promise.resolve()),
 }));
 
 describe('connections', () => {
-  afterEach(() => {
-    get.mockClear();
-  });
+  afterEach(() => { get.mockClear(); });
 
   describe('requestElements', () => {
     it('calls patch with correct arguments', () => {
@@ -18,7 +16,7 @@ describe('connections', () => {
 
       const expected = [
         getElementsPath(),
-        { params: params },
+        { params },
       ];
 
       const result = requestElements(params);

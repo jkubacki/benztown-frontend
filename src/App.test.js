@@ -1,9 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import { App } from 'App';
+import { AppUnwrapped as App } from 'App';
 
 const props = {
+  markAsLoggedIn: jest.fn(),
   markAsNotLoggedIn: jest.fn(),
   history: { push: jest.fn(), location: { search: '' } },
   match: {},

@@ -27,8 +27,8 @@ jest.mock('utils/storage', () => ({
 
 jest.mock('axios', () => ({
   get: jest.fn(() => Promise.resolve()),
-  post: jest.fn(() =>
-    Promise.resolve({
+  post: jest.fn(
+    () => Promise.resolve({
       data: {
         access_token: 'ACCESS_TOKEN',
         refresh_token: 'REFRESH_TOKEN',
@@ -175,17 +175,16 @@ describe('auth API helpers', () => {
       const password = 'password'
       const result = axios.post;
 
-      return sendAcceptInvitationRequest({ invitation_token: invitationToken, password: password }).then(() => {
-        expect(result).toHaveBeenCalledTimes(1);
-        expect(result).toHaveBeenCalledWith(
-          getInvitationsPath(),
-          queryString.stringify({
-            'password': password,
-            'invitation_token': invitationToken,
-          }),
-          header,
-        );
-      });
+      return sendAcceptInvitationRequest({ invitation_token: invitationToken, password }).then(
+        () => {
+          expect(result).toHaveBeenCalledTimes(1);
+          expect(result).toHaveBeenCalledWith(
+            getInvitationsPath(),
+            queryString.stringify({ password, invitation_token: invitationToken }),
+            header,
+          );
+        },
+      );
     });
   });
 });

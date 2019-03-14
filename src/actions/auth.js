@@ -1,7 +1,7 @@
 import { SubmissionError } from 'redux-form';
 import { push } from 'connected-react-router';
 
-import { dispatchRequest } from 'actions';
+import dispatchRequest from 'actions';
 import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
@@ -12,7 +12,7 @@ import {
   MARK_AS_NOT_LOGGED,
   ACCEPT_INVITATION_REQUEST,
   ACCEPT_INVITATION_SUCCESS,
-  ACCEPT_INVITATION_FAILURE
+  ACCEPT_INVITATION_FAILURE,
 } from 'actionTypes';
 import {
   sendLoginRequest,
@@ -25,11 +25,11 @@ export function logout() {
   return dispatchRequest({
     requestAction: LOGOUT_REQUEST,
     request: sendLogoutRequest,
-    onSuccess: dispatch => {
+    onSuccess: (dispatch) => {
       dispatch(push(getRootPath()));
       dispatch({ type: LOGOUT_SUCCESS });
     },
-    onFailure: dispatch => {
+    onFailure: (dispatch) => {
       dispatch({ type: LOGOUT_FAILURE });
     },
   });
@@ -39,7 +39,7 @@ export function acceptInvitation(params) {
   return dispatchRequest({
     requestAction: ACCEPT_INVITATION_REQUEST,
     request: () => sendAcceptInvitationRequest(params),
-    onSuccess: dispatch => {
+    onSuccess: (dispatch) => {
       dispatch({ type: ACCEPT_INVITATION_SUCCESS });
       dispatch(push(getRootPath()));
     },
@@ -58,7 +58,7 @@ export function login(params) {
   return dispatchRequest({
     requestAction: LOGIN_REQUEST,
     request: () => sendLoginRequest(params),
-    onSuccess: (dispatch, data, getState) => {
+    onSuccess: (dispatch, data) => {
       dispatch({ type: LOGIN_SUCCESS, payload: data });
     },
     onFailure: (dispatch, error) => {

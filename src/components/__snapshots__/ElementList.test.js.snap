@@ -28,6 +28,7 @@ exports[`renders without crashing 1`] = `
       element={
         Object {
           "attributes": Object {
+            "file": "file.mp3",
             "name": "Element name1",
             "tag_list": Array [
               "tag1",
@@ -44,6 +45,7 @@ exports[`renders without crashing 1`] = `
       element={
         Object {
           "attributes": Object {
+            "file": "file.mp3",
             "name": "Element name2",
             "tag_list": Array [
               "tag2",

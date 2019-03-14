@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Route as StandardRoute, withRouter } from 'react-router-dom';
 
-import { routerLocation as routerLocationPropType } from 'constants/propTypes';
-import { getRouteLocation } from 'utils/navigation';
+import { routerLocationPropType } from 'constants/propTypes';
+import getRouteLocation from 'utils/navigation';
 
 function Route({
   storedLocation,

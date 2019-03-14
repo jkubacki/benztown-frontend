@@ -1,25 +1,28 @@
 import React from 'react';
-import { compose } from 'redux'
-import { connect } from 'react-redux'
+import PropTypes from 'prop-types';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import { login } from 'actions/auth';
-import validateField from 'utils/validateField'
+import { login as loginAction } from 'actions/auth';
+import validateField from 'utils/validateField';
 
 class LoginForm extends React.Component {
-  handleSubmit = values =>
-    this.props.login({
+  handleSubmit = (values) => {
+    const { login } = this.props;
+    return login({
       username: values.email,
       password: values.password,
       rememberMe: values.remember,
     });
+  }
 
   render() {
     const { handleSubmit } = this.props;
 
-    return(
+    return (
       <form onSubmit={handleSubmit(this.handleSubmit)}>
         <div className="form-group">
-          <label>Email address</label>
+          <label htmlFor="email">Email address</label>
           <Field
             label="email"
             placeholder="Enter email"
@@ -27,11 +30,11 @@ class LoginForm extends React.Component {
             type="email"
             component={validateField}
             className="form-control"
-            required={true}
+            required
           />
         </div>
         <div className="form-group">
-          <label>Password</label>
+          <label htmlFor="password">Password</label>
           <Field
             label="password"
             placeholder="Enter password"
@@ -39,7 +42,7 @@ class LoginForm extends React.Component {
             type="password"
             component={validateField}
             className="form-control"
-            required={true}
+            required
           />
         </div>
         <div className="form-group form-check">
@@ -50,20 +53,25 @@ class LoginForm extends React.Component {
             component="input"
             className="form-check-input"
           />
-          <label className="form-check-label">Remember me</label>
+          <label htmlFor="remember" className="form-check-label">Remember me</label>
         </div>
         <button type="submit" className="btn btn-outline-primary">Submit</button>
       </form>
-    )
+    );
   }
 }
 
-export { LoginForm }
+LoginForm.propTypes = {
+  login: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+};
+
+export { LoginForm as LoginFormUnwrapped };
 
 export default compose(
   connect(
     null,
-    { login },
+    { login: loginAction },
   ),
   reduxForm({
     form: 'login',
@@ -71,4 +79,4 @@ export default compose(
       remember: true,
     },
   }),
-)(LoginForm)
+)(LoginForm);

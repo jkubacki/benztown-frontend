@@ -2,7 +2,7 @@ import React from 'react';
 import toJson from 'enzyme-to-json';
 import { shallow } from 'enzyme';
 
-import { SearchForm } from './SearchForm';
+import { SearchFormUnwrapped as SearchForm } from 'components/SearchForm';
 
 const props = {
   getElements: jest.fn(() => Promise.resolve()),
@@ -25,10 +25,10 @@ describe('SearchForm', () => {
 
   it('should call getElements with value from input on change', () => {
     const searchInput = wrapper.find('input');
-    const event = {target: {value: 'query'}};
+    const event = { target: { value: 'query' } };
 
     searchInput.simulate('change', event);
 
-    expect(props.getElements).toHaveBeenCalledWith({"q": "query"});
+    expect(props.getElements).toHaveBeenCalledWith({ q: 'query' });
   });
 });

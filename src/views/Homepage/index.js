@@ -1,23 +1,28 @@
 import 'bootstrap/dist/css/bootstrap.css';
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 
-import ClientState from 'constants/clientState'
-import LoginForm from 'components/LoginForm'
-import ElementList from 'components/ElementList'
+import ClientState from 'constants/clientState';
+import LoginForm from 'components/LoginForm';
+import ElementList from 'components/ElementList';
 
 function Homepage({ isLoggedIn }) {
   return (
     <>
-      {isLoggedIn && <ElementList />}
-      {!isLoggedIn && <LoginForm />}
+      { isLoggedIn && <ElementList /> }
+      { !isLoggedIn && <LoginForm /> }
     </>
-  )
+  );
 }
 
-export { Homepage }
+Homepage.propTypes = {
+  isLoggedIn: PropTypes.bool.isRequired,
+};
+
+export { Homepage as HomepageUnwrapped };
 
 export default compose(
   connect(({ client }) => ({

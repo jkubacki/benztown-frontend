@@ -51,17 +51,13 @@ function apiAction(callback, additionalHeaders) {
       : params;
 
     if (token) {
-      return callback(path, formattedParams, originalMergedConfig).catch(e => {
+      return callback(path, formattedParams, originalMergedConfig).catch((e) => {
         if (axios.isCancel(e)) {
           throw e;
         }
 
-        return refreshTokens().then(() =>
-          callback(
-            path,
-            formattedParams,
-            mergeConfig(config, additionalHeaders),
-          ),
+        return refreshTokens().then(
+          () => callback(path, formattedParams, mergeConfig(config, additionalHeaders)),
         );
       });
     }
@@ -71,8 +67,8 @@ function apiAction(callback, additionalHeaders) {
 }
 
 export function get(path, config, options) {
-  return apiAction((newPath, newParams, newConfig) =>
-    axios.get(newPath, newConfig),
+  return apiAction(
+    (newPath, newParams, newConfig) => axios.get(newPath, newConfig),
   )(path, null, config, options);
 }
 
@@ -90,7 +86,7 @@ export function post(path, params, config, options) {
 }
 
 export function apiDelete(path, config, options) {
-  return apiAction((newPath, newParams, newConfig) =>
-    axios.delete(newPath, newConfig),
+  return apiAction(
+    (newPath, newParams, newConfig) => axios.delete(newPath, newConfig),
   )(path, null, config, options);
 }

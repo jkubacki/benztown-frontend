@@ -3,13 +3,11 @@ import {
   REQUEST_ELEMENTS_REQUEST,
   REQUEST_ELEMENTS_SUCCESS,
 } from 'actionTypes';
-import { requestElements } from 'api/elements';
+import requestElements from 'api/elements';
 
-import { getElements } from './elements';
+import getElements from 'actions/elements';
 
-jest.mock('api/elements', () => ({
-  requestElements: jest.fn(),
-}));
+jest.mock('api/elements', () => jest.fn());
 
 describe('elements', () => {
   const dispatch = jest.fn();
@@ -19,7 +17,7 @@ describe('elements', () => {
     const data = {
       data: [
         { id: 1, attributes: { name: 'Element name1', tag_list: ['tag1', 'tag2', 'tag3'] } },
-        { id: 2, attributes: { name: 'Element name2', tag_list: ['tag2', 'tag3', 'tag4'] } }
+        { id: 2, attributes: { name: 'Element name2', tag_list: ['tag2', 'tag3', 'tag4'] } },
       ],
     };
     requestElements.mockReturnValueOnce(Promise.resolve({ data }));

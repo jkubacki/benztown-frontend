@@ -1,4 +1,4 @@
-export function getRouteLocation(
+export default function getRouteLocation(
   currentLocation,
   storedLocation,
   initialBackground,
@@ -8,9 +8,9 @@ export function getRouteLocation(
   if (initialBackground) {
     location = initialBackground;
   } else if (
-    storedLocation &&
-    currentLocation.state &&
-    currentLocation.state.modal
+    storedLocation
+    && currentLocation.state
+    && currentLocation.state.modal
   ) {
     location = storedLocation;
   }
